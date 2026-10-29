@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Untuk Maulida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Great+Vibes&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#000;--ink:#f3e9ec;--soft:#b9a4ab;--rose:#ff5c8a;--rose2:#c2185b;--line:rgba(255,120,160,.45);--glass:rgba(40,12,22,.55);
+--serif:"Cormorant Garamond",Georgia,serif;--script:"Great Vibes","Snell Roundhand",cursive;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;overflow-x:hidden}
+#ff{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,#intro{position:relative;z-index:1}
+h1,h2{font-family:var(--script);font-weight:400;margin:0}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:22px;box-shadow:0 0 28px rgba(255,70,130,.18),inset 0 0 22px rgba(255,70,130,.06);backdrop-filter:blur(6px)}
+.btn{font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.55em 1.5em;cursor:pointer;transition:background .25s,box-shadow .25s}
+.btn:hover,.btn:focus-visible{background:rgba(255,80,140,.18);box-shadow:0 0 18px rgba(255,80,140,.4);outline:none}
+.btn.pri{background:linear-gradient(135deg,var(--rose),var(--rose2));border-color:transparent}
+/* intro */
+#intro{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .8s}
+#intro.out{opacity:0;pointer-events:none}
+.card{width:min(380px,100%);padding:34px 28px 24px;text-align:center}
+.card h1{font-size:2.5rem;line-height:1.15;margin-bottom:12px}
+.card p{margin:0 0 20px;color:var(--soft)}
+.step{display:none}.step.on{display:block;animation:in .7s}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+.dots{display:flex;gap:6px;justify-content:center;margin:18px 0 10px}
+.dots i{width:6px;height:6px;border-radius:9px;background:rgba(255,255,255,.25);transition:.3s}
+.dots i.on{width:20px;background:var(--rose)}
+.foot{font-size:.8rem;color:#8a7880;margin:0!important}
+/* content */
+main{display:none;max-width:860px;margin:0 auto;padding:60px 20px 80px}
+main.on{display:block}
+section{margin-bottom:110px;text-align:center}
+section h2{font-size:clamp(2.2rem,7vw,3.2rem);margin-bottom:34px}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:520px;margin:0 auto}
+.count div{padding:18px 4px}.count b{display:block;font-size:1.9rem;font-weight:500}.count span{font-size:.8rem;color:var(--soft)}
+.sub{margin-top:26px;color:var(--soft)}
+.tl{position:relative;max-width:640px;margin:0 auto;text-align:left;padding-left:30px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.ev{position:relative;padding:16px 20px;margin-bottom:18px}
+.ev::before{content:"";position:absolute;left:-29px;top:24px;width:11px;height:11px;border-radius:50%;background:var(--rose);box-shadow:0 0 12px var(--rose)}
+.ev small{color:var(--rose)}.ev h3{margin:2px 0 4px;font-weight:500;font-size:1.3rem}.ev p{margin:0;color:var(--soft);font-size:.95rem}
+.letter{max-width:640px;margin:0 auto;padding:34px 30px;text-align:left}
+.letter p{font-family:var(--script);font-size:1.7rem;line-height:1.5;margin:0 0 16px;color:#ffd6e2}
+.seal{display:block;margin:6px auto 0;width:54px;height:54px;border-radius:50%;border:1px solid var(--line);background:rgba(255,70,130,.12);color:var(--ink);font-size:1rem;text-align:center;line-height:54px}
+.reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.rs{font:inherit;color:var(--ink);min-height:120px;padding:16px 12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+.rs b{font-size:1.8rem;font-weight:500}.rs em{font-size:.85rem;color:var(--soft)}
+.rs .t{display:none;font-size:.98rem}.rs.open .t{display:block;animation:in .5s}.rs.open b,.rs.open em{display:none}
+.rs.open{border-color:var(--rose)}
+.send svg{width:110px;height:110px;fill:var(--rose);filter:drop-shadow(0 0 18px rgba(255,70,130,.7));cursor:pointer;transition:transform .2s;background:none;border:0}
+.send button{background:none;border:0;padding:0;cursor:pointer}.send button:active svg{transform:scale(.9)}
+#msg{min-height:3em;margin-top:18px;color:var(--soft)}
+.fl{position:fixed;z-index:5;pointer-events:none;width:18px;height:18px;fill:var(--rose);animation:up 2.2s ease-out forwards}
+@keyframes up{to{transform:translateY(-70vh) scale(1.4);opacity:0}}
+.panel{max-width:420px;margin:0 auto;padding:30px 22px 22px;background:rgba(22,18,14,.88);border:1px solid rgba(217,180,74,.35);border-radius:22px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.panel h2{font-family:var(--serif);font-size:1.9rem;font-weight:500;color:#d9b44a;margin:0 0 8px}
+.lead{margin:0 0 22px;font-size:1rem}
+.menu{display:grid;gap:14px}
+.mi{display:block;padding:14px 12px;background:#111;color:var(--ink);text-decoration:none;border:1px solid #d9b44a;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.5);transition:all .3s ease}
+.mi:hover,.mi:focus-visible{background:#d9b44a;color:#111;transform:translateY(-2px);box-shadow:0 6px 15px rgba(217,180,74,.3);outline:none}
+.mi span{display:block;font-size:1.15rem}
+.mi em{display:block;font-size:.85rem;opacity:.7}
+.note{margin:18px 0 0;font-size:.8rem;color:#777}
+.game{max-width:560px;margin:0 auto;padding:40px 20px 28px;border-radius:22px;border:1px solid rgba(255,255,255,.08);background:radial-gradient(circle at 0 0,rgba(168,85,247,.22),transparent 45%),radial-gradient(circle at 100% 0,rgba(56,189,248,.2),transparent 45%),#0a0d17;font-family:"Outfit",system-ui,sans-serif}
+.badge{display:inline-block;padding:7px 16px;border:1px solid rgba(168,85,247,.5);background:rgba(168,85,247,.15);color:#b565f5;border-radius:999px;font-weight:600;font-size:.72rem;line-height:1;letter-spacing:.1em}
+.game h2{font-family:"Outfit",system-ui,sans-serif;font-weight:700;font-size:clamp(2rem,9vw,2.6rem);line-height:1.15;color:#f3f5fa;margin:20px 0 14px}
+.grad{background:linear-gradient(90deg,#38bdf8,#a855f7);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.game p{margin:0 0 26px;color:#cbd2e0;font-size:1rem;line-height:1.55}
+.gm{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.gb{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:22px;min-height:150px;padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.09);background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.012));color:#f3f5fa;text-decoration:none;text-align:left;transition:transform .3s,box-shadow .3s}
+.gb i{font-style:normal;font-weight:600;font-size:.78rem;letter-spacing:.2em;color:#8a93a8}
+.gb b{display:block;font-weight:600;font-size:1.08rem;line-height:1.25;margin-bottom:6px}
+.gb s{display:block;text-decoration:none;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#8a93a8}
+.gb svg{position:absolute;top:14px;right:14px;width:20px;height:20px;fill:none;stroke:#7dd3fc;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.gb.pri{border-color:transparent;background:linear-gradient(160deg,#10182c,#150f28) padding-box,linear-gradient(135deg,#38bdf8,#a855f7) border-box;box-shadow:0 10px 30px rgba(56,189,248,.14)}
+.gb.pri i{color:#7dd3fc}.gb.pri s{color:#c4b5fd}
+.gb.pri:hover,.gb.pri:focus-visible{transform:translateY(-4px);box-shadow:0 14px 38px rgba(139,92,246,.32);outline:none}
+.gb.pri:hover svg,.gb.pri:focus-visible svg{transform:translate(3px,-3px)}
+.gb.off{cursor:default;border-style:dashed;border-color:rgba(255,255,255,.12);background:transparent;opacity:.6}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="ff" aria-hidden="true"></canvas>
+
+<div id="intro">
+  <div class="card glass">
+    <div class="step on">
+      <h1>Halo Maulida</h1>
+      <p>Maaf jika menggangu waktu mu.</p>
+      <button class="btn" data-next>Ketuk untuk lanjut</button>
+    </div>
+    <div class="step">
+      <h1>Apakah kamu ingin melihat isinya</h1>
+      <p>kalau sudah siap, ketuk tombol di bawah</p>
+      <button class="btn pri" id="enter">Lihat isinya</button>
+    </div>
+    <div class="dots"><i class="on"></i><i></i></div>
+    <p class="foot" id="foot">ketuk nya pelan pelan</p>
+  </div>
+</div>
+
+<main id="main">
+  <section>
+    <h2>Aku Akan Tetap Menyukai Mu Selama...</h2>
+    <div class="count">
+      <div class="glass"><b id="d">0</b><span>hari</span></div>
+      <div class="glass"><b id="h">0</b><span>jam</span></div>
+      <div class="glass"><b id="m">0</b><span>menit</span></div>
+      <div class="glass"><b id="s">0</b><span>detik</span></div>
+    </div>
+    <p class="sub">Dan akan terus bertambah selamanya</p>
+  </section>
+
+  <section>
+    <div class="panel">
+      <h2>Pilihan Halaman</h2>
+      <p class="lead">Silakan pilih menu di bawah ini untuk membukanya:</p>
+      <nav class="menu">
+        <a class="mi" href="https://iky16303-code.github.io/catatan-untuk-kamu/" target="_blank" rel="noopener"><span>📖 Catatan Untuk Kamu</span><em>Notes For You</em></a>
+        <a class="mi" href="https://iky16303-code.github.io/pertama-kali-mengenalmu/" target="_blank" rel="noopener"><span>✨ Pertama Kali Mengenalmu</span><em>The First Time I Got to Know You</em></a>
+      </nav>
+      <p class="note">Pilih salah satu menu di atas</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="game">
+      <span class="badge">LEVEL UP YOUR GAMING EXPERIENCE</span>
+      <h2>Daftar Game<br><span class="grad">Special Untuk Kamu</span></h2>
+      <p>Aku ada game khusus dan pasti nya mengejutkan untuk di mainkan, jika berkenan tolong mainkan, jika tidak berkenan gapapa.</p>
+      <nav class="gm">
+        <a class="gb pri" href="https://iky16303-code.github.io/gesture-partikel-spesial-/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg><i>01</i><b>Gerakan Partikel Kecil</b><s>Mainkan sekarang</s></a>
+        <span class="gb off" aria-disabled="true"><i>02</i><b>Segera hadir</b><s>Terkunci</s></span>
+        <span class="gb off" aria-disabled="true"><i>03</i><b>Segera hadir</b><s>Terkunci</s></span>
+        <span class="gb off" aria-disabled="true"><i>04</i><b>Segera hadir</b><s>Terkunci</s></span>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* Ganti tanggal ini dengan tanggal jadian kalian */
+var START=new Date("2022-02-14T00:00:00");
+
+/* kunang-kunang */
+(function(){
+  var c=document.getElementById("ff"),x=c.getContext("2d"),W,H,P=[],dpr=Math.min(devicePixelRatio||1,2);
+  function rs(){W=innerWidth;H=innerHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0)}
+  rs();addEventListener("resize",rs);
+  var n=Math.round(Math.min(70,Math.max(30,W*H/16000)));
+  for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,a:Math.random()*6.28,v:.15+Math.random()*.35,r:.8+Math.random()*1.6,t:Math.random()*6.28,k:.01+Math.random()*.02});
+  function f(){
+    x.clearRect(0,0,W,H);
+    P.forEach(function(p){
+      p.a+=(Math.random()-.5)*.35;p.x+=Math.cos(p.a)*p.v;p.y+=Math.sin(p.a)*p.v;p.t+=p.k;
+      if(p.x<-10)p.x=W+10;if(p.x>W+10)p.x=-10;if(p.y<-10)p.y=H+10;if(p.y>H+10)p.y=-10;
+      var o=.25+.55*Math.abs(Math.sin(p.t));
+      x.beginPath();x.fillStyle="rgba(170,170,170,"+o+")";x.shadowColor="rgba(190,190,190,"+o+")";x.shadowBlur=10;
+      x.arc(p.x,p.y,p.r,0,6.28);x.fill();
+    });
+    requestAnimationFrame(f);
+  }
+  f();
+})();
+
+/* kartu pembuka */
+var steps=document.querySelectorAll(".step"),dots=document.querySelectorAll(".dots i"),cur=0;
+function go(i){cur=i;steps.forEach(function(s,j){s.classList.toggle("on",j==i)});dots.forEach(function(d,j){d.classList.toggle("on",j==i)})}
+document.querySelector("[data-next]").onclick=function(){go(1)};
+document.getElementById("enter").onclick=function(){
+  var i=document.getElementById("intro");i.classList.add("out");
+  setTimeout(function(){i.style.display="none";var m=document.getElementById("main");m.classList.add("on");scrollTo(0,0)},800);
+};
+
+/* penghitung waktu */
+function tick(){
+  var t=Math.max(0,Math.floor((Date.now()-START)/1000));
+  d.textContent=Math.floor(t/86400);h.textContent=Math.floor(t%86400/3600);
+  m.textContent=Math.floor(t%3600/60);s.textContent=t%60;
+}
+tick();setInterval(tick,1000);
+
+</script>
+</body>
+</html>
