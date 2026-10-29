@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Untuk Maulida</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Great+Vibes&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Great+Vibes&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{color-scheme:dark;--bg:#000;--ink:#f3e9ec;--soft:#b9a4ab;--rose:#ff5c8a;--rose2:#c2185b;--line:rgba(255,120,160,.45);--glass:rgba(40,12,22,.55);
 --serif:"Cormorant Garamond",Georgia,serif;--script:"Great Vibes","Snell Roundhand",cursive;
@@ -83,7 +83,15 @@ section h2{font-size:clamp(2.2rem,7vw,3.2rem);margin-bottom:34px}
 .gb.pri:hover,.gb.pri:focus-visible{transform:translateY(-4px);box-shadow:0 14px 38px rgba(139,92,246,.32);outline:none}
 .gb.pri:hover svg,.gb.pri:focus-visible svg{transform:translate(3px,-3px)}
 .gb.off{cursor:default;border-style:dashed;border-color:rgba(255,255,255,.12);background:transparent;opacity:.6}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.quote{position:relative;min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 8px}
+.quote p{max-width:30ch;margin:0;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.35rem,5.4vw,1.95rem);line-height:1.8;letter-spacing:.02em;color:#ece2e6;opacity:0;animation:fade 3.2s ease forwards}
+.ln{display:block;width:46px;height:1px;margin:30px auto;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);opacity:0;animation:fade 3.2s ease 1.8s forwards}
+.hint{position:absolute;left:0;right:0;bottom:14px;display:flex;flex-direction:column;align-items:center;gap:10px;font-size:.85rem;letter-spacing:.22em;color:#9a8f94;opacity:0;animation:fade 2.4s ease 5.2s forwards}
+.hint.gone{animation:none;opacity:0;visibility:hidden}
+.hint i{display:block;width:1px;height:38px;background:linear-gradient(rgba(255,255,255,.7),transparent);animation:drip 2.4s ease-in-out infinite}
+@keyframes drip{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(9px);opacity:1}}
+@keyframes fade{from{opacity:0;transform:translateY(12px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.quote p,.quote .ln,.hint{opacity:1!important}}
 </style>
 </head>
 <body>
@@ -107,15 +115,11 @@ section h2{font-size:clamp(2.2rem,7vw,3.2rem);margin-bottom:34px}
 </div>
 
 <main id="main">
-  <section>
-    <h2>Aku Akan Tetap Menyukai Mu Selama...</h2>
-    <div class="count">
-      <div class="glass"><b id="d">0</b><span>hari</span></div>
-      <div class="glass"><b id="h">0</b><span>jam</span></div>
-      <div class="glass"><b id="m">0</b><span>menit</span></div>
-      <div class="glass"><b id="s">0</b><span>detik</span></div>
-    </div>
-    <p class="sub">Dan akan terus bertambah selamanya</p>
+  <section class="quote">
+    <p style="animation-delay:.6s">Aku menyukaimu tanpa harus memilikimu.</p>
+    <span class="ln"></span>
+    <p style="animation-delay:3s">Semoga kamu menemukan orang yang paling tepat.</p>
+    <div class="hint" aria-hidden="true"><span>geser ke bawah</span><i></i></div>
   </section>
 
   <section>
@@ -147,8 +151,9 @@ section h2{font-size:clamp(2.2rem,7vw,3.2rem);margin-bottom:34px}
 </main>
 
 <script>
-/* Ganti tanggal ini dengan tanggal jadian kalian */
-var START=new Date("2022-02-14T00:00:00");
+
+/* petunjuk geser */
+addEventListener("scroll",function(){var h=document.querySelector(".hint");if(h)h.classList.toggle("gone",scrollY>60)},{passive:true});
 
 /* kunang-kunang */
 (function(){
@@ -180,13 +185,7 @@ document.getElementById("enter").onclick=function(){
   setTimeout(function(){i.style.display="none";var m=document.getElementById("main");m.classList.add("on");scrollTo(0,0)},800);
 };
 
-/* penghitung waktu */
-function tick(){
-  var t=Math.max(0,Math.floor((Date.now()-START)/1000));
-  d.textContent=Math.floor(t/86400);h.textContent=Math.floor(t%86400/3600);
-  m.textContent=Math.floor(t%3600/60);s.textContent=t%60;
-}
-tick();setInterval(tick,1000);
+
 
 </script>
 </body>
