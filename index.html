@@ -20,7 +20,6 @@ h1,h2{font-family:var(--script);font-weight:400;margin:0}
 .btn{font:inherit;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:999px;padding:.55em 1.5em;cursor:pointer;transition:background .25s,box-shadow .25s}
 .btn:hover,.btn:focus-visible{background:rgba(255,80,140,.18);box-shadow:0 0 18px rgba(255,80,140,.4);outline:none}
 .btn.pri{background:linear-gradient(135deg,var(--rose),var(--rose2));border-color:transparent}
-/* intro */
 #intro{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .8s}
 #intro.out{opacity:0;pointer-events:none}
 .card{width:min(380px,100%);padding:34px 28px 24px;text-align:center}
@@ -32,32 +31,10 @@ h1,h2{font-family:var(--script);font-weight:400;margin:0}
 .dots i{width:6px;height:6px;border-radius:9px;background:rgba(255,255,255,.25);transition:.3s}
 .dots i.on{width:20px;background:var(--rose)}
 .foot{font-size:.8rem;color:#8a7880;margin:0!important}
-/* content */
 main{display:none;max-width:860px;margin:0 auto;padding:60px 20px 80px}
 main.on{display:block}
 section{margin-bottom:110px;text-align:center}
 section h2{font-size:clamp(2.2rem,7vw,3.2rem);margin-bottom:34px}
-.count{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:520px;margin:0 auto}
-.count div{padding:18px 4px}.count b{display:block;font-size:1.9rem;font-weight:500}.count span{font-size:.8rem;color:var(--soft)}
-.sub{margin-top:26px;color:var(--soft)}
-.tl{position:relative;max-width:640px;margin:0 auto;text-align:left;padding-left:30px}
-.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--line)}
-.ev{position:relative;padding:16px 20px;margin-bottom:18px}
-.ev::before{content:"";position:absolute;left:-29px;top:24px;width:11px;height:11px;border-radius:50%;background:var(--rose);box-shadow:0 0 12px var(--rose)}
-.ev small{color:var(--rose)}.ev h3{margin:2px 0 4px;font-weight:500;font-size:1.3rem}.ev p{margin:0;color:var(--soft);font-size:.95rem}
-.letter{max-width:640px;margin:0 auto;padding:34px 30px;text-align:left}
-.letter p{font-family:var(--script);font-size:1.7rem;line-height:1.5;margin:0 0 16px;color:#ffd6e2}
-.seal{display:block;margin:6px auto 0;width:54px;height:54px;border-radius:50%;border:1px solid var(--line);background:rgba(255,70,130,.12);color:var(--ink);font-size:1rem;text-align:center;line-height:54px}
-.reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
-.rs{font:inherit;color:var(--ink);min-height:120px;padding:16px 12px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
-.rs b{font-size:1.8rem;font-weight:500}.rs em{font-size:.85rem;color:var(--soft)}
-.rs .t{display:none;font-size:.98rem}.rs.open .t{display:block;animation:in .5s}.rs.open b,.rs.open em{display:none}
-.rs.open{border-color:var(--rose)}
-.send svg{width:110px;height:110px;fill:var(--rose);filter:drop-shadow(0 0 18px rgba(255,70,130,.7));cursor:pointer;transition:transform .2s;background:none;border:0}
-.send button{background:none;border:0;padding:0;cursor:pointer}.send button:active svg{transform:scale(.9)}
-#msg{min-height:3em;margin-top:18px;color:var(--soft)}
-.fl{position:fixed;z-index:5;pointer-events:none;width:18px;height:18px;fill:var(--rose);animation:up 2.2s ease-out forwards}
-@keyframes up{to{transform:translateY(-70vh) scale(1.4);opacity:0}}
 .panel{max-width:420px;margin:0 auto;padding:30px 22px 22px;background:rgba(22,18,14,.88);border:1px solid rgba(217,180,74,.35);border-radius:22px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
 .panel h2{font-family:var(--serif);font-size:1.9rem;font-weight:500;color:#d9b44a;margin:0 0 8px}
 .lead{margin:0 0 22px;font-size:1rem}
@@ -90,8 +67,16 @@ section h2{font-size:clamp(2.2rem,7vw,3.2rem);margin-bottom:34px}
 .hint.gone{animation:none;opacity:0;visibility:hidden}
 .hint i{display:block;width:1px;height:38px;background:linear-gradient(rgba(255,255,255,.7),transparent);animation:drip 2.4s ease-in-out infinite}
 @keyframes drip{0%,100%{transform:translateY(0);opacity:.3}50%{transform:translateY(9px);opacity:1}}
+.end{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:0}
+.rv{opacity:0;transform:translateY(12px);transition:opacity 2s ease,transform 2s ease}
+.end.show .rv{opacity:1;transform:none}
+.t1{max-width:28ch;margin:0;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.3rem,5vw,1.8rem);line-height:1.8;color:#ece2e6}
+.rule{display:block;width:46px;height:1px;margin:26px auto;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent)}
+.sig{margin:22px 0 0;font-family:var(--script);font-size:2.1rem;color:#d9c3cc}
+.up{margin-top:34px;padding:10px 14px;font:inherit;font-size:.8rem;letter-spacing:.22em;color:#9a8f94;background:none;border:0;cursor:pointer}
+.up:hover,.up:focus-visible{color:#ece2e6;outline:none}
 @keyframes fade{from{opacity:0;transform:translateY(12px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.quote p,.quote .ln,.hint{opacity:1!important}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.quote p,.quote .ln,.hint{opacity:1!important}.end .rv{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -148,9 +133,20 @@ section h2{font-size:clamp(2.2rem,7vw,3.2rem);margin-bottom:34px}
     </div>
   </section>
 
+  <section class="end" id="end">
+    <p class="t1 rv" style="transition-delay:.2s">Terima kasih sudah meluangkan waktu untuk membaca sampai di sini.</p>
+    <span class="rule rv" style="transition-delay:1.2s"></span>
+    <p class="t1 rv" style="transition-delay:2s">Semoga harimu selalu tenang dan damai.</p>
+    <p class="sig rv" style="transition-delay:3s">Untukmu</p>
+    <button class="up rv" id="up" style="transition-delay:4s">kembali ke atas</button>
+  </section>
 </main>
 
 <script>
+/* penutup */
+var en=document.getElementById("end");
+if("IntersectionObserver" in window){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){en.classList.add("show");o.disconnect()}},{threshold:.35}).observe(en)}else{en.classList.add("show")}
+document.getElementById("up").onclick=function(){scrollTo({top:0,behavior:"smooth"})};
 
 /* petunjuk geser */
 addEventListener("scroll",function(){var h=document.querySelector(".hint");if(h)h.classList.toggle("gone",scrollY>60)},{passive:true});
@@ -184,7 +180,6 @@ document.getElementById("enter").onclick=function(){
   var i=document.getElementById("intro");i.classList.add("out");
   setTimeout(function(){i.style.display="none";var m=document.getElementById("main");m.classList.add("on");scrollTo(0,0)},800);
 };
-
 </script>
 </body>
 </html>
